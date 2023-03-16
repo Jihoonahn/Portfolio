@@ -7,7 +7,7 @@ let package = Package(
         .executable(name: "Portfolio", targets: ["Portfolio"])
     ],
     dependencies: [
-        .package(name: "JavaScriptKit", url: "https://github.com/swiftwasm/JavaScriptKit", from: "0.15.0")
+        .package(url: "https://github.com/swiftwasm/JavaScriptKit.git", from: "0.18.0")
     ],
     targets: [
         .executableTarget(
