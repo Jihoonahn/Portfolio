@@ -1,5 +1,6 @@
-// swift-tools-version:5.6
+// swift-tools-version:5.7
 import PackageDescription
+
 let package = Package(
     name: "Portfolio",
     platforms: [.macOS(.v11), .iOS(.v13)],
@@ -7,14 +8,18 @@ let package = Package(
         .executable(name: "Portfolio", targets: ["Portfolio"])
     ],
     dependencies: [
-        .package(name: "Tokamak", url: "https://github.com/TokamakUI/Tokamak", from: "0.11.0")
+        .package(url: "https://github.com/TokamakUI/Tokamak.git", from: "0.11.1")
     ],
     targets: [
         .executableTarget(
             name: "Portfolio",
             dependencies: [
-                .product(name: "TokamakShim", package: "Tokamak")
-            ]),
+                .product(name: "TokamakDOM", package: "Tokamak"),
+            ],
+            resources: [
+                .process("Resources/favicon.ico")
+            ]
+        ),
         .testTarget(
             name: "PortfolioTests",
             dependencies: ["Portfolio"]),
