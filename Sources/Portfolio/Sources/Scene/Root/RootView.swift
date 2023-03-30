@@ -4,9 +4,8 @@ struct RootView: View {
     
     var body: some View {
         VStack {
-            IntroView()
+            Text("Hello")
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
-
-// Root -> Intro -> Home

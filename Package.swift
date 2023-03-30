@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "Portfolio",
-    platforms: [.macOS(.v11), .iOS(.v13)],
+    platforms: [.macOS(.v12), .iOS(.v13)],
     products: [
         .executable(name: "Portfolio", targets: ["Portfolio"])
     ],
@@ -14,6 +14,7 @@ let package = Package(
         .executableTarget(
             name: "Portfolio",
             dependencies: [
+                .product(name: "TokamakShim", package: "Tokamak"),
                 .product(name: "TokamakDOM", package: "Tokamak"),
             ],
             resources: [
