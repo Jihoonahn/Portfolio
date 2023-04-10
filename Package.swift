@@ -8,14 +8,14 @@ let package = Package(
         .executable(name: "Portfolio", targets: ["Portfolio"])
     ],
     dependencies: [
-        .package(url: "https://github.com/TokamakUI/Tokamak.git", from: "0.11.1")
+        .package(url: "https://github.com/swiftwasm/JavaScriptKit.git", from: "0.18.0")
     ],
     targets: [
         .executableTarget(
             name: "Portfolio",
             dependencies: [
-                .product(name: "TokamakShim", package: "Tokamak"),
-                .product(name: "TokamakDOM", package: "Tokamak"),
+                "JavaScriptKit",
+                .product(name: "JavaScriptEventLoop", package: "JavaScriptKit")
             ],
             resources: [
                 .process("Resources/favicon.ico")
